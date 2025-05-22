@@ -1,0 +1,12 @@
+# Configuration settings for fine-tuning
+model_name: microsoft/deberta-v3-large
+seed: 42
+max_length: 256
+batch_size: 16
+datasets:
+  - name: sst2
+  - name: reduced_imdb
+  - name: rotten_tomatoes
+  - name: reduced_emotion
+full_fine_tune: true
+frozen_with_classifier: true

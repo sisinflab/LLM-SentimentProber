@@ -1,0 +1,9 @@
+model_name: microsoft/deberta-v3-large
+execution_mode: single_gpu  # single_gpu, multi_gpu_single_node, multi_gpu_multi_node
+quantize: false
+quantization_mode: null     # or "4-bit" / "8-bit"
+device: cuda                # or "cpu" if no CUDA
+cutoff: 10                  # best layer
+personal_model_path: '' #'weights/meta-llama_Llama-3.1-8B-Instruct/emotion/layer_0_concat-mean-max-min_linear-svm_best.joblib'
+dataset_name: 'imdb'      # test_set
+pooling_strategy: 'concat-mean-max-min' # mean, last-token, max, min, concat-mean-max-min, attention

@@ -1,0 +1,34 @@
+options:
+  sequential: False
+  token_level_exploration: True
+  seed: 42
+  test_on_reduced_dataset: False
+  execution_mode: 'multi_gpu_single_node'  # Options: 'single_gpu', 'multi_gpu_single_node', 'multi_gpu_multi_node'
+  quantized_model: True # 8-bit or 4-bit supported
+  quantization_mode: '8-bit' # 8-bit or 4-bit supported
+
+experiment:
+  - model_name: ['meta-llama/Llama-3.1-8B-Instruct']
+    dataset_name:
+      - 'sst2'
+      - 'rotten_tomatoes'
+      - 'imdb'
+#      - 'multilingual'
+      - 'emotion'
+    probe_types:
+#      - 'bilstm'
+#      - 'cnn'
+#      - 'decision-tree'
+#      - 'knn'
+#      - 'lightgbm'
+      - 'linear-svm'
+      - 'logistic-regression'
+#      - 'mlp'
+#      - 'naive-bayes-gaussian'
+      - 'non-linear-svm'
+#      - 'random-forest'
+#      - 'xgboost'
+    n_trials: 5   # Number of trials for Optuna hyperparameter optimization
+    batch_size: 32  # Configurable batch size
+    checkpoint_path: './checkpoints'
+    device: gpu

@@ -1,0 +1,17 @@
+torch
+transformers
+datasets
+scikit-learn
+matplotlib
+optuna
+seaborn
+xgboost
+lightgbm
+accelerate
+nltk
+#sudo apt-get install texlive-latex-base texlive-latex-extra texlive-fonts-recommended
+evaluate
+sentencepiece
+protobuf
+bitsandbytes
+tiktoken

@@ -1,0 +1,35 @@
+options:
+  sequential: False
+  token_level_exploration: True
+  seed: 42
+  test_on_reduced_dataset: False
+  execution_mode: 'multi_gpu_single_node'  # Options: 'single_gpu', 'multi_gpu_single_node', 'multi_gpu_multi_node'
+
+experiment:
+  - model_name:
+      - 'meta-llama/Llama-3.2-1B-Instruct'
+      - 'meta-llama/Llama-3.2-3B-Instruct'
+      - 'meta-llama/Llama-3.1-8B-Instruct'
+      - 'meta-llama/Llama-3.2-1B'
+    dataset_name:
+      - 'sst2'
+      - 'rotten_tomatoes'
+      - 'reduced_imdb'
+      - 'reduced_emotion'
+    probe_types:
+      - 'bilstm'
+      - 'cnn'
+      - 'decision-tree'
+      - 'knn'
+      - 'lightgbm'
+      - 'linear-svm'
+      - 'logistic-regression'
+      - 'mlp'
+      - 'naive-bayes-gaussian'
+      - 'non-linear-svm'
+      - 'random-forest'
+      - 'xgboost'
+    n_trials: 5   # Number of trials for Optuna hyperparameter optimization
+    batch_size: 32  # Configurable batch size
+    checkpoint_path: './checkpoints'
+    device: gpu
