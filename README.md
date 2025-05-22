@@ -83,7 +83,7 @@ Follow the steps below to set up the environment and reproduce the experimental 
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/<AnonName>/Sentiment-Probing-Toolkit-for-LLMs.git
+   git clone https://github.com/sisinflab/LLM-SentimentProber
    cd sentiment-probing-toolkit
    ```
 
